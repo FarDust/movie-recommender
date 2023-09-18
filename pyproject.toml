@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "movie-recommender"
 version = "0.1.0"
-description = ""
+description = "A movie recommender system"
 authors = ["FarDust <gnfaundez@uc.cl>"]
 license = "MIT"
 readme = "README.md"
@@ -10,6 +10,37 @@ packages = [{include = "movie_recommender"}]
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
 fastapi = "^0.103.1"
+pydantic = "^2.3.0"
+pandas = "^2.1.0"
+annoy = "^1.17.3"
+
+
+[tool.poetry.group.exploration.dependencies]
+ipykernel = "^6.25.2"
+transformers = "^4.33.2"
+scikit-learn = "^1.3.0"
+# https://github.com/python-poetry/poetry/issues/8271#issuecomment-1712020965
+tensorflow = {version = "^2.13.0" }
+tensorflow-macos = { version = "^2.13.0", platform = "darwin", markers = "platform_machine=='arm64'" }
+tensorflow-intel = { version = "^2.13.0", platform = "win32" }
+tensorflow-cpu = [
+    { version = "^2.13.0", platform = "linux", markers = "platform_machine!='arm64' and platform_machine!='aarch64'" },
+    { version = "^2.13.0", platform = "darwin", markers = "platform_machine!='arm64' and platform_machine!='aarch64'" },]
+tensorflow-io-gcs-filesystem = [
+    { version = ">= 0.23.1", markers = "platform_machine!='arm64' or platform_system!='Darwin'" },
+    { version = "< 0.32.0", markers = "platform_system == 'Windows'" }
+]
+torch = "^2.0.1"
+xgboost = "^2.0.0"
+black = {extras = ["jupyter"], version = "^23.9.1"}
+seaborn = "^0.12.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+isort = "^5.12.0"
+flake8 = "^6.1.0"
+mypy = "^1.5.1"
 
 
 [build-system]
