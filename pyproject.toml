@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "movie-recommender"
+version = "0.1.0"
+description = ""
+authors = ["FarDust <gnfaundez@uc.cl>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "movie_recommender"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+fastapi = "^0.103.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
